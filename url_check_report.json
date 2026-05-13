@@ -1,0 +1,214 @@
+{
+  "url": "http://localhost:56053",
+  "startedAt": 1772390715038,
+  "finishedAt": 1772390756786,
+  "errors": {
+    "js": [
+      {
+        "type": "console",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found) {\"url\":\"http://localhost:56053/vite.svg?__aidp_probe=1772390741757\",\"lineNumber\":0,\"columnNumber\":0}",
+        "timestamp": 1772390741764,
+        "severity": "error",
+        "phase": "init"
+      }
+    ],
+    "network": [
+      {
+        "url": "https://images.unsplash.com/photo-1572331165267-854da2b021b1?auto=format&fit=crop&q=80&w=1920&h=1080",
+        "type": "image",
+        "method": "GET",
+        "errorText": "net::ERR_BLOCKED_BY_ORB",
+        "ok": false,
+        "from": "network"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1572331165267-854da2b021b1?auto=format&fit=crop&q=80&w=400&h=300",
+        "type": "image",
+        "method": "GET",
+        "errorText": "net::ERR_BLOCKED_BY_ORB",
+        "ok": false,
+        "from": "network"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1572331165267-854da2b021b1?auto=format&fit=crop&q=80&w=1200&h=400",
+        "type": "image",
+        "method": "GET",
+        "errorText": "net::ERR_BLOCKED_BY_ORB",
+        "ok": false,
+        "from": "network"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1572331165267-854da2b021b1?auto=format&fit=crop&q=80&w=600&h=400",
+        "type": "image",
+        "method": "GET",
+        "errorText": "net::ERR_BLOCKED_BY_ORB",
+        "ok": false,
+        "from": "network"
+      },
+      {
+        "url": "http://localhost:56053/vite.svg?__aidp_probe=1772390741757",
+        "type": "image",
+        "method": "GET",
+        "status": 404,
+        "ok": false,
+        "from": "network"
+      }
+    ],
+    "images": []
+  },
+  "styleAudit": {
+    "rate": 0,
+    "unuseClasses": [],
+    "unuseCount": 0,
+    "definedCount": 265,
+    "scannedElementCount": 1002,
+    "inaccessibleStyleSheets": 0
+  },
+  "perfTags": [
+    {
+      "name": "lcp",
+      "value": 1708,
+      "unit": "ms",
+      "source": "performance",
+      "category": "good"
+    },
+    {
+      "name": "cls",
+      "value": 0,
+      "unit": "unitless",
+      "source": "performance",
+      "category": "good"
+    },
+    {
+      "name": "fcp",
+      "value": 293.3333333333333,
+      "unit": "ms",
+      "source": "performance",
+      "category": "good"
+    },
+    {
+      "name": "ttfb",
+      "value": 9.700000000496706,
+      "unit": "ms",
+      "source": "performance",
+      "category": "good"
+    }
+  ],
+  "perfProfiles": [
+    {
+      "profile": "unthrottled",
+      "tags": [
+        {
+          "name": "lcp",
+          "value": 1708,
+          "unit": "ms",
+          "source": "performance",
+          "category": "good"
+        },
+        {
+          "name": "cls",
+          "value": 0,
+          "unit": "unitless",
+          "source": "performance",
+          "category": "good"
+        },
+        {
+          "name": "fcp",
+          "value": 293.3333333333333,
+          "unit": "ms",
+          "source": "performance",
+          "category": "good"
+        },
+        {
+          "name": "ttfb",
+          "value": 9.700000000496706,
+          "unit": "ms",
+          "source": "performance",
+          "category": "good"
+        }
+      ]
+    },
+    {
+      "profile": "4g",
+      "tags": [
+        {
+          "name": "lcp",
+          "value": 4485.333333333333,
+          "unit": "ms",
+          "source": "performance",
+          "category": "poor"
+        },
+        {
+          "name": "cls",
+          "value": 0,
+          "unit": "unitless",
+          "source": "performance",
+          "category": "good"
+        },
+        {
+          "name": "fcp",
+          "value": 3017.3333333333335,
+          "unit": "ms",
+          "source": "performance",
+          "category": "poor"
+        },
+        {
+          "name": "ttfb",
+          "value": 8.733333334326744,
+          "unit": "ms",
+          "source": "performance",
+          "category": "good"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "jsErrorCount": 1,
+    "failedStaticResources": 5,
+    "firstScreenIssues": 0,
+    "styleMismatchRate": 0,
+    "styleMismatchCount": 0,
+    "styleDefinedCount": 265,
+    "styleMismatchClasses": [],
+    "styleAcceptable": true,
+    "performance": {
+      "unthrottled": {
+        "lcp": {
+          "value": 1708,
+          "category": "good"
+        },
+        "cls": {
+          "value": 0,
+          "category": "good"
+        },
+        "fcp": {
+          "value": 293.3333333333333,
+          "category": "good"
+        },
+        "ttfb": {
+          "value": 9.700000000496706,
+          "category": "good"
+        }
+      },
+      "4g": {
+        "lcp": {
+          "value": 4485.333333333333,
+          "category": "poor"
+        },
+        "cls": {
+          "value": 0,
+          "category": "good"
+        },
+        "fcp": {
+          "value": 3017.3333333333335,
+          "category": "poor"
+        },
+        "ttfb": {
+          "value": 8.733333334326744,
+          "category": "good"
+        }
+      }
+    },
+    "finalScore": 50
+  }
+}

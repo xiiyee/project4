@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-950 text-white overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(6, 182, 212, 0.5);
+  }
+  .water-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 182, 212, 0.1) 0%,
+      rgba(14, 116, 144, 0.05) 50%,
+      rgba(8, 47, 73, 0.1) 100%
+    );
+  }
+  .glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(34, 211, 238, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+  .water-wave {
+    background: linear-gradient(
+      90deg,
+      rgba(6, 182, 212, 0.3) 0%,
+      rgba(34, 211, 238, 0.5) 25%,
+      rgba(6, 182, 212, 0.3) 50%,
+      rgba(34, 211, 238, 0.5) 75%,
+      rgba(6, 182, 212, 0.3) 100%
+    );
+    background-size: 200% 100%;
+  }
+  .ripple-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(34, 211, 238, 0.4);
+    animation: ripple 3s ease-out infinite;
+  }
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+  .floating-element-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+  .border-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.3),
+      rgba(59, 130, 246, 0.3),
+      rgba(34, 211, 238, 0.3)
+    );
+    padding: 1px;
+  }
+  .bg-mesh-gradient {
+    background-image: 
+      radial-gradient(at 40% 20%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(34, 211, 238, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+  }
+}
+
+@keyframes waterFlow {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-5px) translateY(2px); }
+  50% { transform: translateX(5px) translateY(-2px); }
+  75% { transform: translateX(-3px) translateY(1px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes surfaceWave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-water-flow {
+  animation: waterFlow 8s ease-in-out infinite;
+}
+
+.animate-surface-wave {
+  animation: surfaceWave 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #0ea5e9);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee, #38bdf8);
+}
