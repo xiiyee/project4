@@ -2,6 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../../Store/ThemeContext';
 import { CodeIcon, ExternalLinkIcon } from '../Icons';
 
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  codeLink: string;
+  demoLink: string;
+  tags: string[];
+}
+
 export const Projects: React.FC = () => {
   const { isDark } = useTheme();
   const sectionRef = useRef<HTMLElement>(null);

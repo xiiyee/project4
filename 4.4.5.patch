@@ -1,0 +1,20 @@
+diff --git a/src/Components/Pages/Projects.tsx b/src/Components/Pages/Projects.tsx
+index a2605af..a824e70 100644
+--- a/src/Components/Pages/Projects.tsx
++++ b/src/Components/Pages/Projects.tsx
+@@ -2,6 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
+ import { useTheme } from '../../Store/ThemeContext';
+ import { CodeIcon, ExternalLinkIcon } from '../Icons';
+ 
++interface Project {
++  title: string;
++  description: string;
++  image: string;
++  codeLink: string;
++  demoLink: string;
++  tags: string[];
++}
++
+ export const Projects: React.FC = () => {
+   const { isDark } = useTheme();
+   const sectionRef = useRef<HTMLElement>(null);
