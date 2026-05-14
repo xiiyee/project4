@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 // 配置项（可根据需要修改）
 const config = {
-  url: 'http://localhost:56053',        // 要访问的网址（由 Python 脚本注入）
+  url: 'http://localhost:61691',        // 要访问的网址（由 Python 脚本注入）
   screenshotPath: path.join(__dirname, 'screenshot.png'), // 截图保存路径
   urlreportPath: path.join(__dirname, 'url_check_report.json'), // URL 检查报告保存路径
   viewport: { width: 1440, height: 1080 }, // 浏览器视口大小

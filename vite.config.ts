@@ -4,12 +4,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 56053,   // 随机端口（由脚本生成）
+    port: 61691,   // 随机端口（由脚本生成）
     strictPort: false,     // 若被占用，Vite 会继续找下一个可用端口
     open: false
   },
   preview: {
-    port: 56053,            // 预览端口保持默认，可按需改为随机
+    port: 61691,            // 预览端口保持默认，可按需改为随机
     strictPort: false
   }
 })
