@@ -1,0 +1,76 @@
+diff --git a/index.html b/index.html
+index 9c9a992..ccfe32b 100644
+--- a/index.html
++++ b/index.html
+@@ -6,6 +6,20 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+     <title>张三 - 个人作品网站</title>
++    <script>
++      (function() {
++        try {
++          const storedTheme = localStorage.getItem('theme');
++          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
++          const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
++          if (isDark) {
++            document.documentElement.classList.add('dark');
++          } else {
++            document.documentElement.classList.remove('dark');
++          }
++        } catch (e) {}
++      })();
++    </script>
+   </head>
+   <body>
+     <div id="root"></div>
+diff --git a/src/Store/ThemeContext.tsx b/src/Store/ThemeContext.tsx
+index 4adaa6a..3fce210 100644
+--- a/src/Store/ThemeContext.tsx
++++ b/src/Store/ThemeContext.tsx
+@@ -1,4 +1,4 @@
+-import React, { createContext, useContext, useState, ReactNode } from 'react';
++import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+ 
+ interface ThemeContextType {
+   isDark: boolean;
+@@ -16,11 +16,38 @@ interface ThemeProviderProps {
+   children: ReactNode;
+ }
+ 
++const getInitialTheme = (): boolean => {
++  if (typeof window === 'undefined') return false;
++  
++  try {
++    const storedTheme = localStorage.getItem('theme');
++    if (storedTheme !== null) {
++      return storedTheme === 'dark';
++    }
++    
++    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
++    return prefersDark;
++  } catch (e) {
++    return false;
++  }
++};
++
+ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+-  const [isDark, setIsDark] = useState(false);
++  const [isDark, setIsDark] = useState(getInitialTheme);
++
++  useEffect(() => {
++    const root = document.documentElement;
++    if (isDark) {
++      root.classList.add('dark');
++      localStorage.setItem('theme', 'dark');
++    } else {
++      root.classList.remove('dark');
++      localStorage.setItem('theme', 'light');
++    }
++  }, [isDark]);
+ 
+   const toggleTheme = () => {
+-    setIsDark(!isDark);
++    setIsDark(prev => !prev);
+   };
+ 
+   return (
